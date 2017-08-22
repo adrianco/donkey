@@ -1,30 +1,41 @@
-# Donkey: a self driving library and control platform for small scale DIY vehicles. 
+# donkeycar: a python self driving library 
 
-Donkey is minimalist and modular self driving library written in Python. It is developed for hobbiests with a focus on allowing fast experimentation and easy community contributions.  
+![build status](https://travis-ci.org/wroscoe/donkey.svg?branch=master)
 
-####Use Donkey if you want to:
-* [Quickly build your own self driving RC car.](https://docs.google.com/document/d/11IPqZcDcLTd2mtYaR5ONpDxFgL9Y1nMNTDvEarST8Wk/edit#heading=h.rqp8wbm837hn) (~$200 + 4hrs).
-* Use existing autopilots to drive your car.
-* Use community datasets to create, improve and test autopilots that other people can use.  
+Donkeycar is minimalist and modular self driving library written in Python. It is 
+developed for hobbiests and students with a focus on allowing fast experimentation and easy 
+community contributions.  
 
+#### Quick Links
+* [Code Documentation](http://docs.donkeycar.com)
+* [Instructions to build a Donkey2 car.](http://www.donkeycar.com)
 
-#### Features:
-* Data logging of image, steering angle, & throttle outputs. 
-* Wifi car controls (a virtual joystic).
-* Community contributed driving data and autopilots.
-* Hardware CAD designs for optional upgrades.
+#### Use Donkey if you want to:
+* Make an RC car drive its self.
+* Compete in self driving races like [DIY Robocars](http://diyrobocars.com)
+* Experiment with different driving methods.
+* Add parts and sensors to your car.
+* Log sensor data. (images, user inputs, sensor readings) 
+* Drive yoru car via a web or game controler.
+* Leverage community contributed driving data.
+* Use existing hardware CAD designs for upgrades.
 
+### Getting started. 
+After building a Donkey2, here are the steps to start driving.
 
-### Drive your car
-Once you have built your car you can use it like this.
+install donkey
+```
+pip install donkeycar
+```
 
-1. Start the default pilot server. `python scripts/serve.py`
-2. Start your car and connect it to the pilot server. `python scripts/drive.py  --remote http://<your_pilot_server_ip>:8887`
-3. Go to `<your_pilot_server_ip>:8887` on your phone or computer to start driving your car. 
+Create a car folder.
+```
+donkey createcar --path ~/d2
+```
 
- 
+Start your car.
+```
+python ~/d2/manage.py drive
+```
 
-
-
-
-
+Now you can control your car by going to `<ip_address_of_your_pi>:8887/drive`
